@@ -5,6 +5,7 @@ body {
 
 #header {
     background-color: orange;
+    box-shadow: 0px 0px 1px 1px rgb(189, 196, 196);
 }
 
 #logo {
@@ -14,6 +15,21 @@ body {
 
 .d_none {
     display: none;
+}
+.content_wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    box-shadow: 0px 0px 1px 1px rgb(189, 196, 196);
+}
+.content{
+    width: calc(100% - 300px);
+}
+.basket{
+    min-width: 300px;
+    height: 100vh;
+    flex-grow: 1;
+    box-shadow: 0px 0px 1px 1px rgb(189, 196, 196);
 }
 
 #title_pic{
@@ -36,6 +52,7 @@ body {
     margin-top: -50px;
     background-size: cover;
     border-radius: 50px;
+    box-shadow: 0px 0px 40px 20px rgb(189, 196, 196);
 }
 
 #p_tag {
@@ -44,4 +61,5 @@ body {
 
 #top_container {
     padding-left: 20px;
+    margin-top: -30px;
 }
