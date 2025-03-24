@@ -134,6 +134,11 @@ body {
     height: 50px;
 }
 
+.symbols_basket:hover{
+    cursor: pointer;
+}
+
 .dishes_basket {
     display: flex;
 }
+

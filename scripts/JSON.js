@@ -5,20 +5,17 @@ let myDishes = [
         "description" : "Dieses Gericht richtet sich an alle, die gern Falafel, frischen Salat, Pilze, und weitere Leckereien essen, ohne Reue!"
     },
     {
-        "name" : "veganer Mischteller",
+        "name" : "Ultimativer Teller",
         "price" : 16.99,
         "description" : "Dieses Gericht richtet sich an alle, die gern Falafel, frischen Salat, Pilze, und weitere Leckereien essen, ohne Reue!"
     },
     {
-        "name" : "veganer Mischteller",
+        "name" : "Grandioser Teller",
         "price" : 16.99,
         "description" : "Dieses Gericht richtet sich an alle, die gern Falafel, frischen Salat, Pilze, und weitere Leckereien essen, ohne Reue!"
     }
 ]
 
-let warenkorbArr = [
-{
-    
-}
+let basketArr = [
 
 ]
