@@ -2,6 +2,7 @@ body {
     margin: 0;
     scroll-behavior: smooth;
     background-color: rgb(71, 93, 71);
+
 }
 
 #header {
@@ -21,7 +22,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
-    box-shadow: 0px 0px 1px 1px rgb(189, 196, 196);
+   
 }
 .content{
     width: calc(100% - 300px);
@@ -30,7 +31,7 @@ body {
     min-width: 300px;
     height: 100vh;
     flex-grow: 1;
-    box-shadow: 0px 0px 1px 1px rgb(189, 196, 196);
+    box-shadow: 0px 0px 2px 2px rgb(221, 168, 118);
 }
 
 #title_pic{
@@ -44,6 +45,7 @@ body {
 #overlap_container{
     display: flex;
     justify-content: center;
+  
 }
 
 #overlap_logo {
@@ -53,7 +55,7 @@ body {
     margin-top: -50px;
     background-size: cover;
     border-radius: 50%;
-    box-shadow: 0px 0px 40px 20px rgb(189, 196, 196);
+    box-shadow: 0px 0px 10px 0px rgb(221, 168, 118);
 }
 
 #p_tag {
@@ -63,4 +65,40 @@ body {
 #top_container {
     padding-left: 20px;
     margin-top: -30px;
+}
+
+#review_section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#arrow {
+    width: 30px;
+    height: 30px;
+}
+
+#plus_button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#plus_button:hover {
+    cursor: pointer;
+}
+
+#plus_div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main_dishes_container {
+    width: 80%;
+    margin-left: 20px;
+    padding-top: 20px;
+    box-shadow: 0px 0px 10px 0px rgb(221, 168, 118);
+    border-radius: 10px;
+
 }
