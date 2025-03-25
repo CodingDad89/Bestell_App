@@ -16,7 +16,7 @@ function renderDishes(i) {
 
 
 
-function renderBasket(i, j) {
+function renderBasket(j) {
     for (let j = 0; j < basketArr.length; j++) {
         document.getElementById(`main_basket`).innerHTML += 
         `<div id="basket_dishesPro${j}">
@@ -30,43 +30,49 @@ function renderBasket(i, j) {
             </div>
         </div> `
   } 
+  
 }
 
 function onclickDish(i, j) {
-    let meal = myDishes[i];
+    
     if(basketArr.includes(myDishes[i])) {
-        basketArr[i].count += 1;
+        basketArr[j].count += 1;
         document.getElementById(`main_basket`).innerHTML = "";
-        renderBasket();
+        renderBasket(j);
         }
     else {
-        basketArr.push(meal);
-        basketArr[i].count = 1;
+        basketArr.push(myDishes[i]);
+        basketArr.count = 1;
+        amountDish();
         document.getElementById(`main_basket`).innerHTML = "";
         renderBasket(); 
     }
     
 }
 
-function dishPlus(j) {
+function dishPlus(j, i) {
     basketArr[j].count += 1;
     document.getElementById(`count${j}`).innerHTML = basketArr[j].count;
-
+    amountDish(j);
+    document.getElementById(`main_basket`).innerHTML = "";
+    renderBasket(i, j)
 }
 
 function dishMinus(j) {
     if(basketArr[j].count <= 1) {
-        basketArr[j].splice(1, 1);
+        basketArr.splice(j, 1);
     }
     else {
         basketArr[j].count -= 1;
-    document.getElementById(`count${j}`).innerHTML = basketArr[j].count;
+        amountDish(j)
+        document.getElementById(`count${j}`).innerHTML = basketArr[j].count; 
+        renderBasket(i, j)
     }
 }
 
-function amountDish(i) {
-    let amountDishes = basketArr[i].price * basketArr[i].count;
-    basketArr[i].amount = amountDishes;
+function amountDish(j) {
+    let amountDishes = basketArr[j].price * basketArr[j].count + "€";
+    basketArr[j].amount = amountDishes;
 }
 
 
