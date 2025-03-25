@@ -25,7 +25,7 @@ function renderBasket(i, j) {
                 <img src="assets/img/order_minus.png" alt="" class="symbols_basket" onclick="dishMinus(${j})">
                 <p id="count${j}">${basketArr[j].count}</p>
                 <img src="assets/img/order_plus.png" alt="" class="symbols_basket" onclick="dishPlus(${j})">
-                <p id="amountDish${j}"></p>
+                <p id="amountDish${j}">${basketArr[j].amount}</p>
                 <img src="assets/img/delete.png" alt="" class="symbols_basket">
             </div>
         </div> `
@@ -56,11 +56,18 @@ function dishPlus(j) {
 
 function dishMinus(j) {
     if(basketArr[j].count <= 1) {
-        basketArr[j].slice(1, 1);
+        basketArr[j].splice(1, 1);
     }
     else {
         basketArr[j].count -= 1;
     document.getElementById(`count${j}`).innerHTML = basketArr[j].count;
     }
-  
 }
+
+function amountDish(i) {
+    let amountDishes = basketArr[i].price * basketArr[i].count;
+    basketArr[i].amount = amountDishes;
+}
+
+
+
