@@ -81,7 +81,7 @@ function amountDish(i) {
 
 function deleteEntry(i) {
     myDishes[i].count = 0;
-    document.getElementById(`basket_dishesPro${i}`).innerHTML = "";
+    document.getElementById(`basket_dishesPro${i}`).remove();
 }
 
 
