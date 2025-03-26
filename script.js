@@ -26,10 +26,12 @@ function renderBasketNew(i) {
             <img src="assets/img/delete.png" alt="" class="symbols_basket" onclick="deleteEntry(${i})">
         </div>
     </div>
-    <div>
-        <p id="zwischensumme${i}">${myDishes[i].sum}</p>
-    </div>
 `
+}
+
+function renderSum(sum) {
+    return document.getElementById(`sum_container`).innerHTML =
+    `<p id="zwischensumme">${sum}</p>`
 }
 
 
@@ -40,11 +42,14 @@ function onclickDish(i) {
         myDishes[i].count += 1;
         renderBasketNew(i);
         amountDish(i);
+        renderSum(i);
         }
     else {
         document.getElementById(`count${i}`).innerHTML ="";
         myDishes[i].count += 1;
         document.getElementById(`count${i}`).innerHTML = myDishes[i].count;
+        amountDish(i);
+        renderSum(i);
     }
 }
 
@@ -79,12 +84,7 @@ function deleteEntry(i) {
     document.getElementById(`basket_dishesPro${i}`).innerHTML = "";
 }
 
-function countAllAmount(i) {
-    let sum = 0;
-    for(let varAmount of myDishes) {
-        sum += varAmount.amount;
-    }
-}
+
 
 
 
