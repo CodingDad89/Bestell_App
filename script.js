@@ -14,65 +14,76 @@ function renderDishes(i) {
   
 }
 
-
-
-function renderBasket(j) {
-    for (let j = 0; j < basketArr.length; j++) {
-        document.getElementById(`main_basket`).innerHTML += 
-        `<div id="basket_dishesPro${j}">
-            <h3 id="name${j}">${basketArr[j].name}</h3>
-            <div id="dishes_basket${j}" class="dishes_basket">
-                <img src="assets/img/order_minus.png" alt="" class="symbols_basket" onclick="dishMinus(${j})">
-                <p id="count${j}">${basketArr[j].count}</p>
-                <img src="assets/img/order_plus.png" alt="" class="symbols_basket" onclick="dishPlus(${j})">
-                <p id="amountDish${j}">${basketArr[j].amount}</p>
-                <img src="assets/img/delete.png" alt="" class="symbols_basket">
-            </div>
-        </div> `
-  } 
-  
+function renderBasketNew(i) {
+    return    document.getElementById(`main_basket`).innerHTML +=      
+    `<div id="basket_dishesPro${i}">
+        <h3 id="name${i}">${myDishes[i].name}</h3>
+        <div id="dishes_basket${i}" class="dishes_basket">
+            <img src="assets/img/order_minus.png" alt="" class="symbols_basket" onclick="dishMinus(${i})">
+            <p id="count${i}">${myDishes[i].count}</p>
+            <img src="assets/img/order_plus.png" alt="" class="symbols_basket" onclick="dishPlus(${i})">
+            <p id="amountDish${i}">${myDishes[i].amount}</p>
+            <img src="assets/img/delete.png" alt="" class="symbols_basket" onclick="deleteEntry(${i})">
+        </div>
+    </div>
+    <div>
+        <p id="zwischensumme${i}">${myDishes[i].sum}</p>
+    </div>
+`
 }
 
-function onclickDish(i, j) {
+
+
+function onclickDish(i) {
     
-    if(basketArr.includes(myDishes[i])) {
-        basketArr[j].count += 1;
-        document.getElementById(`main_basket`).innerHTML = "";
-        renderBasket(j);
+    if(myDishes[i].count == 0) {
+        myDishes[i].count += 1;
+        renderBasketNew(i);
+        amountDish(i);
         }
     else {
-        basketArr.push(myDishes[i]);
-        basketArr.count = 1;
-        amountDish();
-        document.getElementById(`main_basket`).innerHTML = "";
-        renderBasket(); 
+        document.getElementById(`count${i}`).innerHTML ="";
+        myDishes[i].count += 1;
+        document.getElementById(`count${i}`).innerHTML = myDishes[i].count;
     }
-    
 }
 
-function dishPlus(j, i) {
-    basketArr[j].count += 1;
-    document.getElementById(`count${j}`).innerHTML = basketArr[j].count;
-    amountDish(j);
-    document.getElementById(`main_basket`).innerHTML = "";
-    renderBasket(i, j)
+
+function dishPlus(i) {
+    document.getElementById(`count${i}`).innerHTML ="";
+    myDishes[i].count += 1;
+    document.getElementById(`count${i}`).innerHTML = myDishes[i].count;
+    amountDish(i)
 }
 
-function dishMinus(j) {
-    if(basketArr[j].count <= 1) {
-        basketArr.splice(j, 1);
+function dishMinus(i) {
+    if(myDishes[i].count <= 1) {
+        deleteEntry(i) ;
     }
     else {
-        basketArr[j].count -= 1;
-        amountDish(j)
-        document.getElementById(`count${j}`).innerHTML = basketArr[j].count; 
-        renderBasket(i, j)
+        document.getElementById(`count${i}`).innerHTML ="";
+        myDishes[i].count -= 1;
+        document.getElementById(`count${i}`).innerHTML = myDishes[i].count;
+        amountDish(i);
     }
 }
 
-function amountDish(j) {
-    let amountDishes = basketArr[j].price * basketArr[j].count + "€";
-    basketArr[j].amount = amountDishes;
+function amountDish(i) {
+    myDishes[i].amount = myDishes[i].price * myDishes[i].count + "€";
+    let amountSum = myDishes[i].amount;
+    document.getElementById(`amountDish${i}`).innerHTML = amountSum;
+} 
+
+function deleteEntry(i) {
+    myDishes[i].count = 0;
+    document.getElementById(`basket_dishesPro${i}`).innerHTML = "";
+}
+
+function countAllAmount(i) {
+    let sum = 0;
+    for(let varAmount of myDishes) {
+        sum += varAmount.amount;
+    }
 }
 
 
