@@ -15,7 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-<body onload="renderDishes()">
+<body onload="renderAllThings()">
+
+    <div onclick="toggleOverlay(event)"  id="overlay" class="overlay d_none"></div>
 
     <header id="header">
         <img src="assets/img/Logo.png" alt="" id="logo">
@@ -29,7 +31,7 @@
             </div>
     
             <div id="top_container">
-                <h2 id="top_h2">Vegan Art</h2>
+         
                 <div id="review_section">
                     <img src="assets/img/pfeil.png" alt="" id="arrow"> 
                     <p id="p_tag">Bewertungen (4.5 von 5 Sternen)</p>
@@ -58,13 +60,18 @@
 
             <div id="sum_container">
                 <h3>Zwischensumme:</h3>
-               
+                
+            </div>
+            <div>
+                <button id="order_button" onclick="toggleOverlay()">Bestellen</button>
             </div>
 
         </section>
 
 
     </div>
+
+    <footer class="footer"></footer>
     
 
 

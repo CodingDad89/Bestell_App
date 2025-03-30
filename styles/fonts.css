@@ -3,10 +3,12 @@
     font-weight: 1000;
     font-style: normal;
     font-size: 100px;
-    margin-top: -350px;
-    margin-left: 500px;
     color: black(255, 255, 255);
     text-shadow: black ;
+    
+    padding-left: 50px;
+    color: aliceblue;
+ 
 }
 
 p {

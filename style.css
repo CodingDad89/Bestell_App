@@ -15,9 +15,31 @@ body {
     padding: 10px;
 }
 
-.d_none {
+.overlay{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color: #8e8f84;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+   
+}
+
+.d_none{
     display: none;
 }
+
+#dialogBoxOrdered{
+    width: 500px;
+    height: 500px;
+    border: 2px solid;
+    z-index: 2;
+    background-color: rgb(221, 168, 118);
+    text-align: center;
+}
+
 .content_wrapper{
     display: flex;
     flex-direction: row;
@@ -29,9 +51,13 @@ body {
 }
 .basket{
     min-width: 300px;
-    height: 100vh;
+    height: 550px;
     flex-grow: 1;
     box-shadow: 0px 0px 2px 2px rgb(221, 168, 118);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
 }
 
 #title_pic{
@@ -62,15 +88,14 @@ body {
     color: rgb(183, 121, 8);
 }
 
-#top_container {
-    padding-left: 20px;
-    margin-top: -30px;
-}
+
 
 #review_section {
     display: flex;
     align-items: center;
     gap: 10px;
+    padding-left: 50px;
+   
 }
 
 #arrow {
@@ -79,14 +104,14 @@ body {
 }
 
 #h2_menu{
-    padding-bottom: 40px;
-    padding-left: 20px;
-    padding-top: 50px;
+
     color: white;
     font-family: "Love Light", cursive;
     font-weight: 1000;
     font-style: normal;
     font-size: 50px;
+    text-align: center;
+    
 }
 
 #plus_button {
@@ -112,8 +137,11 @@ body {
     margin-left: 20px;
     border-radius: 10px;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     text-align: center;
     color: white;
+    gap: 20px;
     
 }
 
@@ -145,8 +173,39 @@ body {
 #sum_container{
     width: 100%;
     height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #main_basket{
-    min-height: 500px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    font-size: 12px;
+}
+
+#order_button{
+    font-size: 20px;
+    height: 30px;
+    width: 90px;
+    background-color: rgb(221, 168, 118);
+    border: none;
+    margin-top: 20px;
+}
+#order_button:hover{
+    cursor: pointer;
+
+    background-color: rgb(160, 158, 158);
+}
+
+.footer{
+    width: 100%;
+    height: 100px;
+}
+
+#zwischensumme{
+    font-size: 12px;
 }
