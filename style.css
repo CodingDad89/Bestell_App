@@ -18,12 +18,13 @@ body {
 .overlay{
     height: 100vh;
     width: 100%;
-    position: absolute;
+    position: sticky;
+    top: 0;
     background-color: #8e8f84;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
+
    
 }
 
@@ -37,7 +38,10 @@ body {
     border: 2px solid;
     z-index: 2;
     background-color: rgb(221, 168, 118);
-    text-align: center;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .content_wrapper{
@@ -54,10 +58,11 @@ body {
     height: 550px;
     flex-grow: 1;
     box-shadow: 0px 0px 2px 2px rgb(221, 168, 118);
-    display: flex;
     flex-direction: column;
     align-items: center;
     position: sticky;
+    top: 0;
+   
 }
 
 #title_pic{
@@ -209,3 +214,26 @@ body {
 #zwischensumme{
     font-size: 12px;
 }
+
+#xButtonConfig {
+    width: 200px;
+    height: 200px;
+    margin-bottom: -180px;
+}
+
+#xButtonConfig:hover {
+    cursor: pointer;
+}
+
+#xButton {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button_class{
+    display: flex;
+    justify-content: center;
+}
+
+
+

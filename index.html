@@ -6,7 +6,11 @@
     <title>Bestellapp</title>
     <script src="script.js"></script>
     <script src="scripts/JSON.js"></script>
+    <script src="scripts/renderDishes.js"></script>
+    <script src="scripts/renderBasket.js"></script>
+    <script src="scripts/onclickOrder.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/media.css">
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +22,7 @@
 <body onload="renderAllThings()">
 
     <div onclick="toggleOverlay(event)"  id="overlay" class="overlay d_none"></div>
-
+   
     <header id="header">
         <img src="assets/img/Logo.png" alt="" id="logo">
     </header>
@@ -62,14 +66,17 @@
                 <h3>Zwischensumme:</h3>
                 
             </div>
-            <div>
-                <button id="order_button" onclick="toggleOverlay()">Bestellen</button>
+            <div class="button_class">
+                <button id="order_button" onclick="toggleOverlay()" class="d_none">Bestellen</button>
             </div>
 
         </section>
 
-
+        
     </div>
+
+    <button id="order_button_resp" class="d_none" onclick="onclickBasketShow()">Warenkorb</button>
+
 
     <footer class="footer"></footer>
     
