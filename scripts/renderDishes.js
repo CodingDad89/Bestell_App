@@ -6,7 +6,7 @@ function renderDishesTemplate(i) {
         </div>
         <div id="dishes${i}">
             <h3 id="name${i}">${myDishes[i].name}</h3>
-            <p id="desc${i}">${myDishes[i].description}</p>
+            <p id="desc${i}" class="desc_css">${myDishes[i].description}</p>
             <p id="price${i}">${myDishes[i].price} €</p>
         </div>`
 

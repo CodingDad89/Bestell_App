@@ -6,6 +6,8 @@ function renderDishes(i) {
 
 function renderBasketNew(i) {
     renderBasketTemplate(i);
+    renderRespBasketTemplate(i);
+   
 }
 
 function renderAllThings() {
@@ -24,8 +26,10 @@ function onclickDish(i) {
         }
     else {
         document.getElementById(`count${i}`).innerHTML ="";
+        document.getElementById(`countResp${i}`).innerHTML ="";
         myDishes[i].count += 1;
         document.getElementById(`count${i}`).innerHTML = myDishes[i].count;
+        document.getElementById(`countResp${i}`).innerHTML = myDishes[i].count;
         amountDish(i);
         sumAmountAdd(i);
     }
@@ -33,8 +37,10 @@ function onclickDish(i) {
 
 function dishPlus(i) {
     document.getElementById(`count${i}`).innerHTML ="";
+    document.getElementById(`countResp${i}`).innerHTML ="";
     myDishes[i].count += 1;
     document.getElementById(`count${i}`).innerHTML = myDishes[i].count;
+    document.getElementById(`countResp${i}`).innerHTML = myDishes[i].count;
     amountDish(i);
     sumAmountAdd(i);
 }
@@ -42,13 +48,16 @@ function dishPlus(i) {
 function dishMinus(i) {
     if(myDishes[i].count <= 1) {
         deleteEntry(i);
+        deleteEntryResp(i);
         toggleOrderButton();
         sumAmountSub(i);
     }
     else {
         document.getElementById(`count${i}`).innerHTML ="";
+        document.getElementById(`countResp${i}`).innerHTML ="";
         myDishes[i].count -= 1;
         document.getElementById(`count${i}`).innerHTML = myDishes[i].count;
+        document.getElementById(`countResp${i}`).innerHTML = myDishes[i].count;
         amountDish(i);
         sumAmountSub(i);
     }
@@ -58,6 +67,7 @@ function amountDish(i) {
     myDishes[i].amount = myDishes[i].price * myDishes[i].count;
     let amountSum = myDishes[i].amount;
     document.getElementById(`amountDish${i}`).innerHTML = amountSum.toFixed(2);
+    document.getElementById(`amountDishResp${i}`).innerHTML = amountSum.toFixed(2);
 } 
 
 function deleteEntry(i) {
@@ -71,6 +81,21 @@ function deleteEntry(i) {
         myDishes[i].count = 0;
         myDishes[i].amount = 0;
         document.getElementById(`basket_dishesPro${i}`).remove();
+        sumAmountSub(i);
+    }
+}
+
+function deleteEntryResp(i) {
+    if(document.getElementById(`basket_resp`).innerHTML == "") {
+        myDishes[i].count = 0;
+        myDishes[i].amount = 0;
+        document.getElementById(`basket_dishesProResp${i}`).remove();
+        sumAmountSub(i);
+        toggleOrderButton();
+    } else {
+        myDishes[i].count = 0;
+        myDishes[i].amount = 0;
+        document.getElementById(`basket_dishesProResp${i}`).remove();
         sumAmountSub(i);
     }
 }
@@ -137,8 +162,7 @@ function basketOverlay() {
     basketOverlayVar.classList.toggle(`d_none`);
 }
 
-function onclickBasketShow(i){
-    let basketShow = document.getElementById(`basket_resp`);
+function onclickBasketShow(){
+    let basketShow = document.getElementById(`basket_resp_main`);
     basketShow.classList.toggle(`d_none`);
-    renderRespBasketTemplate(i);
 }

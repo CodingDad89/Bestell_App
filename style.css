@@ -132,11 +132,16 @@ body {
 
 #plus_button:hover {
     cursor: pointer;
+    filter: grayscale(100%);
 }
 
 .plus_div {
     display: flex;
     justify-content: flex-end;
+}
+
+.desc_css{
+    padding: 10px;
 }
 
 .main_dishes_container {
@@ -171,6 +176,7 @@ body {
 
 .symbols_basket:hover{
     cursor: pointer;
+    filter: grayscale(100%);
 }
 
 .dishes_basket {
@@ -209,8 +215,10 @@ body {
 }
 
 .footer{
+    padding-top: 20px;
     width: 100%;
     height: 100px;
+    border: 1px solid rgb(221, 168, 118);
 }
 
 #zwischensumme{
@@ -237,11 +245,20 @@ body {
     justify-content: center;
 }
 
-#basket_resp{
-    width: 100%;
-    height: 100%;
+#basket_resp_main{
+    width: 280px;
+    height: 600px;
     position: absolute;
-    background-color: #8e8f84;
-    top: 0;
+    background-color: rgb(221, 168, 118);
+    top: 20px;
+    left: 20px;
+    border-radius: 5%;
 }
+
+#basket_resp{
+    margin-top: 20px;
+    overflow: auto;
+    width: 250px;
+    height: 300px;
+}   
 
