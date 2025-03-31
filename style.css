@@ -265,6 +265,7 @@ body {
 
 #sum_container_Resp{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 

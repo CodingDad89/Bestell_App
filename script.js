@@ -13,6 +13,7 @@ function renderBasketNew(i) {
 function renderAllThings() {
    renderDishes();
    renderSum();
+   renderSumResp();
 }
 
 function onclickDish(i) {
@@ -100,12 +101,12 @@ function deleteEntryResp(i) {
     }
 }
 
-function renderSum(i) {
+function renderSum() {
     return document.getElementById(`sum_container`).innerHTML +=
     `<p id="zwischensumme"></p>`
 }
 
-function renderSumResp(i) {
+function renderSumResp() {
     return     document.getElementById(`sum_container_Resp`).innerHTML +=
     `<p id="zwischensummeResp"></p>`
 }
@@ -115,6 +116,7 @@ function sumAmountAdd(i) {
     for(let index = 0; index < myDishes.length; index++) {
         sum += myDishes[index].amount;
         document.getElementById(`zwischensumme`).innerHTML = sum.toFixed(2) + "€";
+        document.getElementById(`zwischensummeResp`).innerHTML = sum.toFixed(2) + "€";
     }
 }
 
@@ -123,6 +125,7 @@ function sumAmountSub(i) {
     for(let index = 0; index < myDishes.length; index++) {
         sum += myDishes[index].amount;
         document.getElementById(`zwischensumme`).innerHTML = sum.toFixed(2) + "€";
+        document.getElementById(`zwischensummeResp`).innerHTML = sum.toFixed(2) + "€";
     }
 }
 
