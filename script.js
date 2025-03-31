@@ -105,6 +105,11 @@ function renderSum(i) {
     `<p id="zwischensumme"></p>`
 }
 
+function renderSumResp(i) {
+    return     document.getElementById(`sum_container_Resp`).innerHTML +=
+    `<p id="zwischensummeResp"></p>`
+}
+
 function sumAmountAdd(i) {
     let sum = 0;
     for(let index = 0; index < myDishes.length; index++) {
@@ -165,4 +170,6 @@ function basketOverlay() {
 function onclickBasketShow(){
     let basketShow = document.getElementById(`basket_resp_main`);
     basketShow.classList.toggle(`d_none`);
+    let basketSumShow = document.getElementById(`sum_container_Resp`);
+    basketSumShow.classList.toggle(`d_none`);
 }

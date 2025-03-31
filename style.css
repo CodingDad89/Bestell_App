@@ -218,7 +218,8 @@ body {
     padding-top: 20px;
     width: 100%;
     height: 100px;
-    border: 1px solid rgb(221, 168, 118);
+    border-top: 1px solid rgb(221, 168, 118);
+    margin-top: 20px;
 }
 
 #zwischensumme{
@@ -261,4 +262,9 @@ body {
     width: 250px;
     height: 300px;
 }   
+
+#sum_container_Resp{
+    display: flex;
+    justify-content: center;
+}
 
