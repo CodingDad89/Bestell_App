@@ -9,9 +9,11 @@
     <script src="scripts/renderDishes.js"></script>
     <script src="scripts/renderBasket.js"></script>
     <script src="scripts/onclickOrder.js"></script>
+    <script src="scripts/renderRespBasket.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/media.css">
     <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Love+Light&display=swap" rel="stylesheet">
@@ -53,7 +55,7 @@
             
         </section>
 
-        <section class="basket" id="baskets${j}">
+        <section class="basket" id="basket_id">
             <div>
                 <h2 id="basket_div">Warenkorb</h2>
             </div>
@@ -75,9 +77,10 @@
         
     </div>
 
-    <button id="order_button_resp" class="d_none" onclick="onclickBasketShow()">Warenkorb</button>
+    <div id="basket_resp" class="d_none">
 
-
+    </div>
+    <button id="order_button_resp" class="d_none" onclick="onclickBasketShow(i)">Warenkorb</button>
     <footer class="footer"></footer>
     
 

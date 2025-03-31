@@ -137,6 +137,8 @@ function basketOverlay() {
     basketOverlayVar.classList.toggle(`d_none`);
 }
 
-function onclickBasketShow(){
-    document.getElementsByClassName(`basket`).classList.remove(`d_none`);
+function onclickBasketShow(i){
+    let basketShow = document.getElementById(`basket_resp`);
+    basketShow.classList.toggle(`d_none`);
+    renderRespBasketTemplate(i);
 }
